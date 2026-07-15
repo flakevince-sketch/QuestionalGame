@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English & Math Master</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Main Menu Screen -->
+    <div class="container" id="main-menu">
+        <h1>Ultimate Brain Master</h1>
+        <p>Choose your training mode!</p>
+        <div class="menu-grid">
+            <button onclick="startGame('pronunciation')">🗣️ Pronunciation</button>
+            <button onclick="startGame('spelling')">⌨️ Spelling</button>
+            <button class="math-btn" onclick="startGame('math')">➕ Math Quiz</button>
+            <button class="animal-btn" onclick="startGame('animal')">🦁 Animal Sounds</button>
+        </div>
+    </div>
+
+    <!-- Active Game Screen -->
+    <div class="container" id="game-ui">
+        <div class="level-badge" id="level-display">Level 1</div>
+        
+        <!-- Pronunciation Specific UI -->
+        <div id="pronunciation-ui">
+            <div class="word-display" id="word-display">...</div>
+            <p class="listening-indicator" id="listening-indicator">🎙️ Listening...</p>
+            <button id="speak-btn" onclick="startListening()" disabled>Click to Speak</button>
+        </div>
+
+        <!-- Typing UI (Used for Spelling, Math, and Animals) -->
+        <div id="typing-ui">
+            <div class="word-display" id="typing-prompt">❓</div>
+            <input type="text" id="text-input" placeholder="Type your answer here..." disabled autocomplete="off">
+            <div id="spw-display" class="spw-text"></div>
+            
+            <div class="menu-buttons">
+                <button id="submit-btn" onclick="checkAnswer()" disabled>Submit</button>
+                <button id="repeat-btn" class="secondary" onclick="repeatPrompt()" disabled>Hear Again</button>
+                <button id="slow-btn" class="secondary" onclick="hearSlowly()" disabled>🐢 Slow</button>
+                <button id="spell-out-btn" class="secondary" onclick="spellOutWord()" disabled>One by One</button>
+            </div>
+        </div>
+
+        <p class="status" id="status-text">Listen to the AI...</p>
+        <br>
+        <button class="secondary small-btn" onclick="returnToMenu()">Return to Menu</button>
+    </div>
+
+    <script src="site.js"></script>
+</body>
+</html>
